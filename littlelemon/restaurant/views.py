@@ -1,5 +1,12 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from rest_framework import viewsets
+from .models import MenuItem, Reservations
+from .serializer import MenuItemSerializer, ReservationsSerializer
 
-def index(request):
-  return render(request, 'index.html', {})
+# Create your views here. 
+class MenuItemsView(viewsets.ModelViewSet):
+  queryset = MenuItem.objects.all()
+  serializer_class = MenuItemSerializer
+
+class ReservationsViewSet(viewsets.ModelViewSet):
+  queryset = Reservations.objects.all()
+  serializer_class = ReservationsSerializer
