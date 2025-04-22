@@ -6,6 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('restaurant/', include('restaurant.urls')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('api/', include('Users.urls')),
+    path('api/', include('users.urls')),
     path('api-token-auth/', obtain_auth_token)
 ]
